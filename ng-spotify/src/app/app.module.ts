@@ -9,10 +9,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { SpotifyService } from './services/spotify.service';
+import { ArtistComponent } from './components/artist/artist.component';
+import { AlbumComponent } from './components/album/album.component';
 
 const appRoutes: Routes = [
   {path: '', component: SearchComponent},
-  {path: 'about', component: AboutComponent}
+  {path: 'about', component: AboutComponent},
+  {path: 'artist/:id', component: ArtistComponent},
+  {path: 'album/:id', component: AlbumComponent}
+  
 ];
 
 @NgModule({
@@ -20,7 +25,9 @@ const appRoutes: Routes = [
     AppComponent,
     NavbarComponent,
     AboutComponent,
-    SearchComponent
+    SearchComponent,
+    ArtistComponent,
+    AlbumComponent
   ],
   imports: [
     BrowserModule,
